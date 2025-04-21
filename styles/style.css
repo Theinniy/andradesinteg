@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+:root{
+    --cor-primaria: #181C3E;
+    --cor-secundaria: #B8BDD8;
+    --cor-terciaria: #EEF0F6;
+    --cor-quaternaria: #C9A227;
+    --cor-quintaria: #3E3E3E;
+
+    --fonte-primaria: "Poppins", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-primaria);
+}
+
+header .container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding: 0%;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header{
+    padding: 0 50px;
+    background-color:rgba(19, 21, 54, 0.9);/* #131536 com 90% opacidade */
+    backdrop-filter: blur(10px);/* desfoca o fundo do header */
+    -webkit-backdrop-filter: blur(10px);/* desfoca o fundo do header */
+    z-index: 1000;/* garante que o header fique acima de outros elementos */
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.logo{
+    color: var(--cor-secundaria);
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+}
+
+.menu ul{
+    list-style: none; /* remove bolinhas da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* deixa os itens na horizontal */
+    gap: 50px; /* espaço entre os itens - pode ajustar */
+    align-items: center; /* alinha no centro vertical */  
+}
+
+.menu ul li a{
+    text-decoration: none; /* remove o sublinhado do link */
+    color: var(--cor-secundaria); /* cor do texto */
+    font-size: 1.5rem; /* tamanho da fonte */
+    font-weight: 400; /* peso da fonte */
+    transition: color 0.3s ease; /* animação suave na mudança de cor */
+}
+.menu ul li a:hover{
+    color: var(--cor-quaternaria); /* cor do texto ao passar o mouse */
+}
+
+.botao-orcamento{
+    background-color: var(--cor-quaternaria);
+    color: var(--cor-primaria);
+    padding: 16px 54px;
+    border-radius: 10px;
+    text-decoration: none; /* remove o sublinhado do link */
+    font-size: 1.5rem; /* tamanho da fonte */
+    font-weight: 700; /* peso da fonte */
+    transition: background-color 0.3s ease; /* animação suave na mudança de cor */
+}
+  
+
