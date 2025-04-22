@@ -89,3 +89,44 @@ main{
     height: 100vh; /* altura da tela */
     padding: 0 3.125rem; /* espaçamento do main */
 }
+
+.cta{
+    position: relative; /* posição relativa para o efeito de sombra */
+    width: 100%; /* largura total do container */
+    height: 100vh; /* altura total do container */
+    overflow: hidden; /* esconde o que ultrapassa o container */
+}
+
+.cta-imagem{
+    width: 100%; /* largura total da imagem */
+    height: 100%; /* altura total da imagem */
+    object-fit: cover; /* cobre todo o container */
+    display: block; /* exibe a imagem como bloco */
+}
+
+/* Conteúdo centralizado sobre a imagem */
+.cta-conteudo {
+    position: absolute; /* posição absoluta para centralizar sobre a imagem */
+    top: 50%; /* 50% do topo do container */
+    left: 50%; /* 50% da esquerda do container */
+    transform: translate(-50%, -50%); /* centraliza o conteúdo */
+    text-align: center; /* centraliza o texto */
+    color: var(--cor-secundaria); /* cor do texto */
+    padding: 2rem; /* espaçamento interno */
+    gap: 1rem; /* espaçamento entre os itens */
+    display: flex; /* exibe os itens na vertical */
+    flex-direction: column; /* exibe os itens na vertical */
+    justify-content: center; /* centraliza os itens verticalmente */
+}
+
+.cta-titulo{
+    font-size: clamp(1rem, 2vw, 3.3440rem); /* tamanho da fonte responsivo */
+    font-weight: 700; /* peso da fonte */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra do texto */
+}
+
+.cta-subtitulo{
+    font-size: clamp(1rem, 1.5vw, 2rem); /* tamanho da fonte responsivo */
+    font-weight: 400; /* peso da fonte */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra do texto */
+}
