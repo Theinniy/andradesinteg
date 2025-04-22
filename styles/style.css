@@ -24,7 +24,8 @@ body{
 header .container{
     max-width: 1500px; /* largura máxima do container */
     margin: 0 auto;
-    display: flex;  
+    display: flex; 
+    padding: 0 clamp(1rem, 3vw, 3.125rem); /* espaçamento do header */ 
     gap: clamp(1.5rem, 2.5vw, 4.125rem); /* mínimo 1rem, ideal adaptável, máximo 3rem */
     flex-direction: row;
     justify-content: space-between;
@@ -32,7 +33,6 @@ header .container{
 }
 
 header{
-    padding: 0 3.125rem; /* espaçamento do header */
     display: flex; /* exibe os itens na horizontal */
     justify-content: space-between; /* espaçamento entre os itens */
     background-color:rgba(19, 21, 54, 0.9);/* #131536 com 90% opacidade */
@@ -62,12 +62,21 @@ header{
 .menu ul li a{
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-secundaria); /* cor do texto */
-    font-size: clamp(1.5rem, 2vw, 2rem); /* entre 14px e 24px */
+    font-size: clamp(1rem, 1.5vw, 2rem); /* entre 14px e 24px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */
 }
 .menu ul li a:hover{
     color: var(--cor-quaternaria); /* cor do texto ao passar o mouse */
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--cor-secundaria);
+    cursor: pointer;
 }
 
 .botao-orcamento{
@@ -76,7 +85,7 @@ header{
     padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 5vw, 3.5rem); /* padding vertical e horizontal adaptável */
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
-    font-size: clamp(1.5rem, 2vw, 2rem); /* fonte responsiva */
+    font-size: clamp(1rem, 1.5vw, 2rem); /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
@@ -86,8 +95,8 @@ main{
     display: flex; /* exibe os itens na horizontal */
     justify-content: center; /* centraliza os itens horizontalmente */
     align-items: center; /* centraliza os itens verticalmente */
-    height: 100vh; /* altura da tela */
-    padding: 0 3.125rem; /* espaçamento do main */
+    padding: 0; /* espaçamento do main */
+    margin: 0; /* espaçamento do main */
 }
 
 .cta{
@@ -98,20 +107,28 @@ main{
 }
 
 .cta-imagem{
+    max-width: 1500px; /* largura máxima da imagem */
+    position: absolute; /* posição absoluta para o efeito de sombra */
+    top: 0; /* alinha ao topo */
+    align-content: center; /* alinha ao centro */
+    left: 50%; /* alinha à esquerda */
+    transform: translateX(-50%); /* centraliza a imagem */
     width: 100%; /* largura total da imagem */
     height: 100%; /* altura total da imagem */
     object-fit: cover; /* cobre todo o container */
-    display: block; /* exibe a imagem como bloco */
+    z-index: 1; /* coloca a imagem atrás do conteúdo */
 }
 
 /* Conteúdo centralizado sobre a imagem */
 .cta-conteudo {
-    position: absolute; /* posição absoluta para centralizar sobre a imagem */
+    position: relative; /* posição relativa para centralizar sobre a imagem */
+    z-index: 2; /* garante que o conteúdo fique acima da imagem */
     top: 50%; /* 50% do topo do container */
     left: 50%; /* 50% da esquerda do container */
     transform: translate(-50%, -50%); /* centraliza o conteúdo */
+    width: 65%; /* largura do conteúdo */
     text-align: center; /* centraliza o texto */
-    color: var(--cor-secundaria); /* cor do texto */
+    color: var(--cor-terciaria); /* cor do texto */
     padding: 2rem; /* espaçamento interno */
     gap: 1rem; /* espaçamento entre os itens */
     display: flex; /* exibe os itens na vertical */
@@ -122,11 +139,49 @@ main{
 .cta-titulo{
     font-size: clamp(1rem, 2vw, 3.3440rem); /* tamanho da fonte responsivo */
     font-weight: 700; /* peso da fonte */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra do texto */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
 }
 
 .cta-subtitulo{
     font-size: clamp(1rem, 1.5vw, 2rem); /* tamanho da fonte responsivo */
     font-weight: 400; /* peso da fonte */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra do texto */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 5.5); /* sombra do texto */
+}
+
+.botao-orcamento-1{
+    display: inline-block; /* exibe como bloco para o espaçamento */
+    width: 50%; /* largura do botão */
+    margin: 0 auto; /* centraliza o botão */
+    padding: 10px clamp(2rem, 3vw, 3rem); /* espaçamento interno adaptável */
+    background-color: var(--cor-quaternaria);
+    color: var(--cor-primaria);
+    border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
+    text-decoration: none; /* remove o sublinhado do link */
+    font-size: clamp(1.5rem, 2vw, 2rem); /* fonte responsiva */
+    font-weight: 700; /* peso da fonte */
+    transition: background-color 0.3s ease; /* animação suave na mudança de cor */
+    white-space: nowrap; /* evita quebrar o texto em duas linhas */
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    .menu ul {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: rgba(19, 21, 54, 0.95);
+        padding: 1rem;
+        position: absolute;
+        top: 100%; /* aparece abaixo do header */
+        right: 0;
+        min-width: 200px;
+        z-index: 999;
+    }
+
+    .menu ul.aberto {
+        display: flex;
+    }
 }
