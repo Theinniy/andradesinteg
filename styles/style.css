@@ -22,18 +22,19 @@ body{
 }
 
 header .container{
-    width: 100%;
+    max-width: 1500px; /* largura máxima do container */
     margin: 0 auto;
-    padding: 0;
-    padding: 0%;
     display: flex;  
+    gap: clamp(1.5rem, 2.5vw, 4.125rem); /* mínimo 1rem, ideal adaptável, máximo 3rem */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 header{
-    padding: 0 50px;
+    padding: 0 3.125rem; /* espaçamento do header */
+    display: flex; /* exibe os itens na horizontal */
+    justify-content: space-between; /* espaçamento entre os itens */
     background-color:rgba(19, 21, 54, 0.9);/* #131536 com 90% opacidade */
     backdrop-filter: blur(10px);/* desfoca o fundo do header */
     -webkit-backdrop-filter: blur(10px);/* desfoca o fundo do header */
@@ -45,9 +46,8 @@ header{
 
 .logo{
     color: var(--cor-secundaria);
-    width: 100%;
-    height: auto;
-    max-width: 120px;
+    width: clamp(80px, 8vw, 120px); /* largura responsiva da logo */
+    height: auto; 
 }
 
 .menu ul{
@@ -55,14 +55,14 @@ header{
     margin: 0;
     padding: 0;
     display: flex; /* deixa os itens na horizontal */
-    gap: 50px; /* espaço entre os itens - pode ajustar */
+    gap: clamp(0.5rem, 3vw, 3.125rem); /* espaçamento entre os itens */
     align-items: center; /* alinha no centro vertical */  
 }
 
 .menu ul li a{
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-secundaria); /* cor do texto */
-    font-size: 1.5rem; /* tamanho da fonte */
+    font-size: clamp(1.5rem, 2vw, 2rem); /* entre 14px e 24px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */
 }
@@ -73,12 +73,12 @@ header{
 .botao-orcamento{
     background-color: var(--cor-quaternaria);
     color: var(--cor-primaria);
-    padding: 16px 54px;
-    border-radius: 10px;
+    padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 5vw, 3.5rem); /* padding vertical e horizontal adaptável */
+    border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
-    font-size: 1.5rem; /* tamanho da fonte */
+    font-size: clamp(1.5rem, 2vw, 2rem); /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
+    white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
-  
 
