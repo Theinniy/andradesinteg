@@ -126,7 +126,7 @@ main{
     top: 50%; /* 50% do topo do container */
     left: 50%; /* 50% da esquerda do container */
     transform: translate(-50%, -50%); /* centraliza o conteúdo */
-    width: 65%; /* largura do conteúdo */
+    width: 75%; /* largura do conteúdo */
     text-align: center; /* centraliza o texto */
     color: var(--cor-terciaria); /* cor do texto */
     padding: 2rem; /* espaçamento interno */
@@ -157,7 +157,7 @@ main{
     color: var(--cor-primaria);
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
-    font-size: clamp(1.5rem, 2vw, 2rem); /* fonte responsiva */
+    font-size: clamp(1rem, 2vw, 2rem); /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
@@ -183,5 +183,9 @@ main{
 
     .menu ul.aberto {
         display: flex;
+    }
+
+    .botao-orcamento-1{
+        width: 100%; /* largura do conteúdo */        
     }
 }
