@@ -82,3 +82,10 @@ header{
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
 
+main{
+    display: flex; /* exibe os itens na horizontal */
+    justify-content: center; /* centraliza os itens horizontalmente */
+    align-items: center; /* centraliza os itens verticalmente */
+    height: 100vh; /* altura da tela */
+    padding: 0 3.125rem; /* espaçamento do main */
+}
