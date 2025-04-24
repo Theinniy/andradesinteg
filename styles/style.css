@@ -15,21 +15,23 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+  }  
+
 body{
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     font-family: var(--fonte-primaria);
 }
 
-header .container{
-    max-width: 1500px; /* largura máxima do container */
-    margin: 0 auto;
-    display: flex; 
-    padding: 0; /*clamp(0.5rem, 1vw, 1rem); espaçamento do header  */
-    gap: clamp(1.5rem, 2.5vw, 4.125rem); /* mínimo 1rem, ideal adaptável, máximo 3rem */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+main{
+    display: flex; /* exibe os itens na horizontal */
+    flex-direction: column;
+    justify-content: center; /* centraliza os itens horizontalmente */
+    align-items: center; /* centraliza os itens verticalmente */
+    padding: 0; /* espaçamento do main */
+    margin: 0; /* espaçamento do main */
 }
 
 header{
@@ -43,6 +45,17 @@ header{
     top:0;
     width: 100%;
     /* padding: clamp(0.5rem, 0.5vh, 0.5rem) 0; Altura adaptável com padding */
+}
+
+header .container{
+    max-width: 1500px; /* largura máxima do container */
+    margin: 0 auto;
+    display: flex; 
+    padding: 0; /*clamp(0.5rem, 1vw, 1rem); espaçamento do header  */
+    gap: clamp(1.5rem, 2.5vw, 4.125rem); /* mínimo 1rem, ideal adaptável, máximo 3rem */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo{
@@ -92,14 +105,6 @@ header{
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
 
-main{
-    display: flex; /* exibe os itens na horizontal */
-    justify-content: center; /* centraliza os itens horizontalmente */
-    align-items: center; /* centraliza os itens verticalmente */
-    padding: 0; /* espaçamento do main */
-    margin: 0; /* espaçamento do main */
-}
-
 .cta{
     position: relative; /* posição relativa para o efeito de sombra */
     width: 100%; /* largura total do container */
@@ -108,7 +113,7 @@ main{
 }
 
 .cta-bg {
-    max-width: 1500px; /* largura máxima do container */
+    max-width: max-width: clamp(21.87rem, 100vw, 93.75rem);; /* largura máxima do container */
     position: absolute;
     align-content: center;
     left: 50%;
@@ -167,6 +172,57 @@ main{
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
 
+#sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    /* gap: 2rem; espaçamento entre os itens */
+    padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    max-width: 1500px;
+    margin: 0% auto; /* centraliza o container */
+}
+  
+  .sobre-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: clamp(0.5rem, 2vw, 2.5rem);    
+}
+  
+  .sobre-imagem{
+    width: 100%; /* largura total do container */
+    max-width: clamp(18.75rem, 50vw, 46.875rem); /* largura máxima da imagem */
+    height: auto; /* altura automática para manter a proporção */
+    flex: 0 1 55%; /* base proporcional à largura original */
+    object-fit: cover; /* cobre o espaço disponível */
+  }
+  
+  .sobre-texto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(0.5rem, 1vw, 1.5rem); /* espaçamento entre os itens */
+    flex: 0 1 45%; /* base proporcional à largura original */
+    max-width: clamp(18.75rem, 50vw, 34.375rem); /* largura máxima do container */
+  }   
+  
+  h1 {
+    font-size: clamp(1rem, 2.5vw, 3.3440rem); /* tamanho da fonte responsivo */
+    font-weight: 700; /* peso da fonte */
+    color: var(--cor-quaternaria);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
+  }
+
+  .sobre-texto {
+    font-size: clamp(0.75rem, 1.35vw, 1.75rem); /* tamanho da fonte responsivo */
+    font-weight: 400; /* peso da fonte */
+    color: var(--cor-terciaria);
+  }
+ 
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
@@ -188,11 +244,8 @@ main{
     .menu ul.aberto {
         display: flex;
     }
-    
-    .cta-bg {
-        background-image: url('../img/cta-Bg-mobile.jpg'); /* versão para celular */
-      }
 
+        
     .botao-orcamento-1{
         width: 50%; /* largura do conteúdo */        
     }
@@ -200,4 +253,15 @@ main{
     .cta-conteudo {
         width: 100%; /* largura do conteúdo */
     }
+    
+    .sobre-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        gap: clamp(0.5rem, 1vw, 2.5rem);
+        padding: 1rem; /* espaçamento do container */
+    }  
+  
 }
