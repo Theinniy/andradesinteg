@@ -250,6 +250,12 @@ header .container{
         width: 50%; /* largura do conteúdo */        
     }
     
+     .cta-bg {
+        /* background-size: contain; */ /* ajusta a imagem de fundo para caber no container */
+        object-fit: cover; /* cobre o espaço disponível */
+        background-repeat: no-repeat;  /* não repete a imagem de fundo  */
+        background-position: center center; /* centraliza a imagem de fundo */
+    }
     .cta-conteudo {
         width: 100%; /* largura do conteúdo */
     }
