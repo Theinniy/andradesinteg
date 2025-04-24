@@ -1,0 +1,14 @@
+inline-block
+
+.cta-imagem{
+    max-width: 1500px; /* largura máxima da imagem */
+    position: absolute; /* posição absoluta para o efeito de sombra */
+    top: 0; /* alinha ao topo */
+    align-content: center; /* alinha ao centro */
+    left: 50%; /* alinha à esquerda */
+    transform: translateX(-50%); /* centraliza a imagem */
+    width: 100%; /* largura total da imagem */
+    height: 100%; /* altura total da imagem */
+    object-fit: cover; /* cobre todo o container */
+    z-index: 1; /* coloca a imagem atrás do conteúdo */
+}
