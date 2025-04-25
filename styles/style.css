@@ -349,8 +349,8 @@ header .container{
         flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
     }
 
-    .servicos-texto{
+    /* .servicos-texto{
         font-size: var(--font-small);
-    }
+    } */
   
 }
