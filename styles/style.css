@@ -7,6 +7,15 @@
     --cor-quintaria: #3E3E3E;
 
     --fonte-primaria: "Poppins", sans-serif;
+    
+    --font-h1: clamp(1.5rem, 2.5vw, 2.5rem);    /* 32px - 40px */
+    --font-h2: clamp(1.375rem, 2vw, 2.125rem); /* 30px - 34px */
+    --font-h3: clamp(1.125rem, 1.75vw, 1.75rem); /* 24px - 28px */
+    --font-h4: clamp(1rem, 1.5vw, 1.5rem);  /* 22px - 24px */
+    --font-h5: clamp(0.875rem, 1.375vw, 1.125rem);  /* 16px - 18px */
+    --font-p: clamp(0.8125rem, 1.125vw, 1rem);    /* 15px - 16px */
+    --font-small: clamp(0.625rem, 1vw, 0.875rem); /* 13px - 14px */    
+      
 }
 
 *{
@@ -76,7 +85,7 @@ header .container{
 .menu ul li a{
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-secundaria); /* cor do texto */
-    font-size: clamp(1rem, 1.5vw, 2rem); /* entre 14px e 24px */
+    font-size: var(--font-h4);/* clamp(1rem, 1.5vw, 2rem) */ /* entre 14px e 24px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */
 }
@@ -86,7 +95,7 @@ header .container{
 
 #menu-toggle {
     display: none;
-    font-size: 2rem;
+    font-size: 1.375rem;
     background: none;
     border: none;
     color: var(--cor-secundaria);
@@ -99,7 +108,8 @@ header .container{
     padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2.5rem); /* padding vertical e horizontal adaptável */
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
-    font-size: clamp(1rem, 1.5vw, 2rem); /* fonte responsiva */
+    font-size: var(--font-h5);
+    /* font-size: clamp(1rem, 1.5vw, 2rem); */ /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
@@ -113,7 +123,7 @@ header .container{
 }
 
 .cta-bg {
-    max-width: max-width: clamp(21.87rem, 100vw, 93.75rem);; /* largura máxima do container */
+    max-width: clamp(21.87rem, 100vw, 93.75rem); /* largura máxima do container */
     position: absolute;
     align-content: center;
     left: 50%;
@@ -145,28 +155,29 @@ header .container{
 }
 
 .cta-titulo{
-    font-size: clamp(1rem, 2vw, 3.3440rem); /* tamanho da fonte responsivo */
+    font-size: var(--font-h1);/* clamp(1rem, 2vw, 3.3440rem) */ /* tamanho da fonte responsivo */
     font-weight: 700; /* peso da fonte */
     text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
 }
 
 .cta-subtitulo{
-    font-size: clamp(1rem, 1.5vw, 2rem); /* tamanho da fonte responsivo */
+    font-size: var(--font-h3); /* clamp(1rem, 1.5vw, 2rem) */ /* tamanho da fonte responsivo */
     font-weight: 400; /* peso da fonte */
     text-shadow: 0 0 10px rgba(0, 0, 0, 5.5); /* sombra do texto */
 }
 
 .botao-orcamento-1{
-    display: flex; /* exibe como bloco para o espaçamento */
-    justify-content: center; /* centraliza o botão */   
-    width: 35%; /* largura do botão */
+    display: inline-flex; /* exibe como bloco para o espaçamento */
+    justify-content: center; /* centraliza o botão */ 
+    align-items: center; /* centraliza o botão verticalmente */
+    /* width: 35%; */ /* largura do botão */
     margin: 0 auto; /* centraliza o botão */
     padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2.5rem); /* padding vertical e horizontal adaptável */
     background-color: var(--cor-quaternaria);
     color: var(--cor-primaria);
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
-    font-size: clamp(1rem, 2vw, 2rem); /* fonte responsiva */
+    font-size: var(--font-h3);/* clamp(1rem, 2vw, 2rem) */ /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
@@ -209,21 +220,84 @@ header .container{
     flex: 0 1 45%; /* base proporcional à largura original */
     max-width: clamp(18.75rem, 50vw, 34.375rem); /* largura máxima do container */
   }   
-  
-  h1 {
-    font-size: clamp(1rem, 2.5vw, 3.3440rem); /* tamanho da fonte responsivo */
-    font-weight: 700; /* peso da fonte */
+   
+  .sobre-titulo {
     color: var(--cor-quaternaria);
     text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
+    font-weight: 700; /* peso da fonte */
   }
 
   .sobre-texto {
-    font-size: clamp(0.75rem, 1.35vw, 1.75rem); /* tamanho da fonte responsivo */
+    font-size: var(--font-p);/* clamp(0.75rem, 1.35vw, 1.75rem); */ /* tamanho da fonte responsivo */
     font-weight: 400; /* peso da fonte */
     color: var(--cor-terciaria);
   }
+
+  #servicos{
+    background-color: var(--cor-terciaria);
+    padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */    
+  }
+
+  .servicos-container{
+    display: flex;
+    flex-wrap: nowrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    justify-content: center; 
+    gap: clamp(0.5rem, 1vw, 2rem);
+    padding: clamp(0.75rem, 1vw, 2rem); 
+  }
+
+  .servicos-tituloh1{
+    text-align: center;
+    color: var(--cor-primaria);
+    font-size: var(--font-h1);
+    font-weight: 700;
+  }
+
+  .servicos-subtitulo{
+    text-align: center;
+    color: var(--cor-quintaria);
+    font-size: var(--font-h5);
+    font-weight: 400;
+  }
+
+  .servicos-card{
+    width: 100%;
+    max-width: 325px; /* largura máxima do card */
+    background-color: transparent;
+    overflow: hidden; /* esconde o que ultrapassa o container */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* sombra puxando pra baixo e direita */    
+  }
+
+  .servicos-card img{
+    width: 100%; /* largura total do container */
+    height: auto; /* altura automática para manter a proporção */
+    display: block; /* remove o espaço em branco abaixo da imagem */
+  }
+
+  .servicos-conteudo{
+    background-color: var(--cor-terciaria);
+    padding: 0.75rem;
+    text-align: center;
+    color: var(--cor-quintaria);    
+  }
+
+    .servicos-titulo{
+        font-size: var(--font-h5); 
+        font-weight: 700; /* peso da fonte */
+    }
+  
+  .servicos-texto{
+    font-size: var(--font-small);
+    font-weight: 400;
+    padding: clamp(0.5rem, 1vw, 1.5rem);  
+    padding: clamp(0.25rem, 0.5vw, 1rem); 
+  }
+  
  
 @media (max-width: 768px) {
+    
     #menu-toggle {
         display: block;
     }
@@ -259,7 +333,7 @@ header .container{
     .cta-conteudo {
         width: 100%; /* largura do conteúdo */
     }
-    
+      
     .sobre-container {
         display: flex;
         flex-direction: column;
@@ -268,6 +342,15 @@ header .container{
         margin: 0 auto;
         gap: clamp(0.5rem, 1vw, 2.5rem);
         padding: 1rem; /* espaçamento do container */
-    }  
+    }
+    
+    .servicos-container{
+        display: flex;
+        flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
+    }
+
+    .servicos-texto{
+        font-size: var(--font-small);
+    }
   
 }

@@ -1,4 +1,9 @@
+clamp(valor-min, valor-ideal, valor-max)
+
+
 inline-block
+
+<!-- <div class="cta-bg"></div> -->
 
 .cta-imagem{
     max-width: 1500px; /* largura máxima da imagem */
@@ -12,3 +17,5 @@ inline-block
     object-fit: cover; /* cobre todo o container */
     z-index: 1; /* coloca a imagem atrás do conteúdo */
 }
+
+Com o passar do tempo, a Andrade Soluções Integradas evoluiu e se diversificou, expandindo seus serviços para atender às crescentes demandas do mercado. Hoje, somos uma empresa reconhecida por nossa excelência em pintura, acabamento e telhados, sempre buscando a satisfação total de nossos clientes.
