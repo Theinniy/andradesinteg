@@ -70,7 +70,7 @@ header .container{
 .logo{
     color: var(--cor-secundaria);
     width: clamp(80px, 8vw, 120px); /* largura responsiva da logo */
-    height: auto; 
+    height: auto;     
 }
 
 .menu ul{
@@ -111,6 +111,7 @@ header .container{
     font-size: var(--font-h5);
     /* font-size: clamp(1rem, 1.5vw, 2rem); */ /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
+    text-align: center;
     transition: background-color 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
@@ -289,12 +290,69 @@ header .container{
     }
   
   .servicos-texto{
-    font-size: var(--font-small);
+    font-size: var(--font-p);
     font-weight: 400;
-    padding: clamp(0.5rem, 1vw, 1.5rem);  
-    padding: clamp(0.25rem, 0.5vw, 1rem); 
+    padding: clamp(0.5rem, 1vw, 1.5rem);      
   }
   
+  .fundadores {
+    display: flex;      
+    justify-content: center;
+    align-items: center;    
+    max-width: 1500px;
+    margin: 0% auto;
+  }
+
+  .fundadores-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: clamp(0.5rem, 1vw, 2.5rem);        
+    padding: clamp(1rem, 1.5vw, 2rem);
+  }
+
+  .fundadores-titulo{
+    writing-mode: vertical-rl; /* Escreve verticalmente da direita pra esquerda */
+    transform: rotate(180deg); /* Rotaciona 180 graus */
+  }
+
+  .cards-fundadores{
+    display: flex;
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    justify-content: center; 
+    gap: clamp(0.5rem, 1vw, 2rem);
+    padding: clamp(0.75rem, 1vw, 2rem); 
+  }
+
+  .card-fundador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 300px; /* largura máxima do card */
+  }
+
+  .card-fundador img {
+    width: 100%; /* largura total do container */
+    height: auto; /* altura automática para manter a proporção */
+    object-fit: cover;
+  }
+
+  .card-fundador h5{
+    font-size: var(--font-h5); /* clamp(1rem, 1.5vw, 2rem) */ /* tamanho da fonte responsivo */
+    font-weight: 700; /* peso da fonte */
+    color: var(--cor-quaternaria);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
+  }
+
+  .card-fundador p{
+    font-size: var(--font-p); /* clamp(0.75rem, 1.35vw, 1.75rem); */ /* tamanho da fonte responsivo */
+    font-weight: 400; /* peso da fonte */
+    padding: clamp(0.5rem, 1vw, 1.5rem);    
+  }
  
 @media (max-width: 768px) {
     
@@ -349,8 +407,8 @@ header .container{
         flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
     }
 
-    /* .servicos-texto{
-        font-size: var(--font-small);
-    } */
+    .fundadores-container{
+      align-items: flex-start;
+    }
   
 }
