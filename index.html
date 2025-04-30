@@ -54,7 +54,7 @@
                 <img class="sobre-imagem" src="img/sobre.png" alt="sobre nós">
                 
                 <div class="sobre-texto-container">
-                    <h1 class="sobre-titulo">Sobre</h1>                   
+                    <h1 class="sobre-titulo" id="nossa-historia">Sobre</h1>                   
                     
                     <p class="sobre-texto">A Andrade Soluções Integradas tem suas raízes na dedicação e paixão pela construção civil, com uma história que remonta a 1973, quando seu fundador iniciou sua jornada na pintura. Desde cedo, ele transmitiu a arte do trabalho bem-feito para seu filho, que aos 5 anos de idade já o acompanhava nos serviços.</p>
                     <p class="sobre-texto">Em 2001, o vínculo entre pai e filho se fortaleceu de vez, quando passaram a trabalhar juntos de forma definitiva. Especializaram-se em acabamento, dominando técnicas como grafiato, textura, cimento queimado, marmorato e outros revestimentos de alto padrão que garantem sofisticação e durabilidade.</p>
@@ -71,7 +71,7 @@
 
             <div class="servicos-container">
 
-                <div class="servicos-card">
+                <div class="servicos-card" id="servicos-prediais">
                     <img src="img/servfachada.jpg" alt="Pintura fachada de prédio" class="servicos-imagem">
                         
                         <div class="servicos-conteudo">
@@ -84,7 +84,7 @@
                             </div>
                 </div>
 
-                <div class="servicos-card">
+                <div class="servicos-card" id="telhados">
                     <img src="img/servtelhado.jpg" alt="Construção e Reforma de Telhados" class="servicos-imagem">
                         
                     
@@ -98,7 +98,7 @@
                         </div>
                 </div>
 
-                <div class="servicos-card">
+                <div class="servicos-card" id="pintura">
                     <img src="img/servpintura.jpg" alt="Pintando aparatmento" class="servicos-imagem">
 
                         <div class="servicos-conteudo">
@@ -111,7 +111,7 @@
                         </div>
                 </div>
 
-                <div class="servicos-card">
+                <div class="servicos-card" id="revestimentos">
                     <img src="img/servgrafiato.jpg" alt="grafiato" class="servicos-imagem">
 
                         <div class="servicos-conteudo">
@@ -164,20 +164,84 @@
         <section id="contato"></section>
 
     </main>
-    <footer class="footer">
+    <footer>
         <div class="footer-container">
 
-            <div class="sitemap-colum"> 
-                <h4>Institucional</h4>
-                <ul class="sitemap-lista">
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#fundadores">Fundadores</a></li>
-                    <li><a href="#obras">Obras</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </div>            
+            <div class="footer-infos">
+
+                <div class="sitemap">                
+
+                    <div class="sitemap-column"> 
+                        <p>Institucional</p>
+                        <ul class="sitemap-lista">
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#nossa-historia">Nossa história</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-column">
+                        <p>Serviços</p>
+                        <ul class="sitemap-lista">                 
+                            <li><a href="#servicos-prediais">Serviços Prediais</a></li>
+                            <li><a href="#telhados">Telhados</a></li>
+                            <li><a href="#pintura">Pintura</a></li>                    
+                            <li><a href="#revestimentos">Revestimentos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-column">
+                        <p>Liderança</p>
+                        <ul class="sitemap-lista">
+                            <li><a href="#fundadores">Fundadores</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-column">
+                        <p>Projetos</p>
+                        <ul class="sitemap-lista">
+                            <li><a href="#obras">Obras</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-column">
+                        <p>Fale Conosco</p>
+                        <ul class="sitemap-lista">
+                            <li><a href="#contato">Contato</a></li>
+                        </ul>
+                    </div>
+                </div> <!-- sitemap -->
+
+                <div class="icons-small">
+
+                    <div class="icon-item">
+                        <a><img src="img/adress.png" alt="Endereço"><span>Rua Tiradentes, 900, 09780900 SBC-SP</span></a>
+                    </div>
+
+                    <div class="icon-item">
+                        <a><img src="img/time.png" alt="Endereço"><span>Segunda à sexta das 09h às 17h</span></a>
+                    </div>
+
+                    <div class="icon-item">
+                        <a href="https://www.instagram.com/andradesinteg/" target="_blank"><img src="img/instagram.png" alt="Instagram"><span>@andradesinteg</span></a>
+                    </div>
+
+                    <div class="icon-item">
+                        <a href="https://wa.me/5511985351485?text=Olá,%20estou%20em%20busca%20de%20uma%20empresa%20de%20confiança%20para%20serviços%20de%20construção%20ou%20manutenção.%20Gostaria%20de%20um%20orçamento%20para%20minha%20casa,%20condomínio%20ou%20comércio." target="_blank"><img src="img/Whatsapp.png" alt="Whatsapp"><span>(11) 98535-1485</span></a>
+                    </div>
+
+                    <div class="icon-item">
+                        <a href="mailto:andradesolucoes@proton.me" target="_blank"><img src="img/email.png" alt="E-mail"><span>andradesolucoes@proton.me</span></a>
+                    </div>
+                    
+                </div> <!-- icons-small -->               
+
+            </div> <!-- footer-infos -->
+        </div> <!-- footer-container -->
+
+        <div class="footer-desenvolvedor">
+            <p>&copy; 2025 Andrade Soluções Integradas. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://br.linkedin.com/in/theinniy" target="_blank" class="developer">Theinniy Amorim</a></p>
+        </div>                    
     </footer>
 
     <script src="app.js"></script>
