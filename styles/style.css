@@ -14,7 +14,9 @@
     --font-h4: clamp(1rem, 1.5vw, 1.5rem);  /* 22px - 24px */
     --font-h5: clamp(0.875rem, 1.375vw, 1.125rem);  /* 16px - 18px */
     --font-p: clamp(0.8125rem, 1.125vw, 1rem);    /* 15px - 16px */
-    --font-small: clamp(0.625rem, 1vw, 0.875rem); /* 13px - 14px */    
+    --font-small: clamp(0.625rem, 1vw, 0.875rem); /* 13px - 14px */
+    
+    --max-width: 1900px; /* largura máxima do container */
       
 }
 
@@ -57,7 +59,7 @@ header{
 }
 
 header .container{
-    max-width: 1500px; /* largura máxima do container */
+    max-width: var(--max-width); /* largura máxima do container */
     margin: 0 auto;
     display: flex; 
     padding: 0; /*clamp(0.5rem, 1vw, 1rem); espaçamento do header  */
@@ -69,7 +71,7 @@ header .container{
 
 .logo{
     color: var(--cor-secundaria);
-    width: clamp(80px, 8vw, 120px); /* largura responsiva da logo */
+    width: clamp(80px, 8vw, 150px); /* largura responsiva da logo */
     height: auto;     
 }
 
@@ -129,7 +131,7 @@ header .container{
     align-content: center;
     left: 50%;
     transform: translateX(-50%); /* centraliza o container */   
-    width: 100%;
+    width: 100%; /* largura total do container */
     height: 100%;
     background-image: url('../img/cta-Bg-mobile1.jpg');/* imagem de fundo */
     background-size: cover;
@@ -140,12 +142,12 @@ header .container{
 
 /* Conteúdo centralizado sobre a imagem */
 .cta-conteudo {
-    position: relative; /* posição relativa para centralizar sobre a imagem */
+    position: absolute; /* posição relativa para centralizar sobre a imagem */
     z-index: 2; /* garante que o conteúdo fique acima da imagem */
     top: 50%; /* 50% do topo do container */
     left: 50%; /* 50% da esquerda do container */
     transform: translate(-50%, -50%); /* centraliza o conteúdo */
-    width: 75%; /* largura do conteúdo */
+    width: clamp(65%,65vw,75%); /* largura do conteúdo */
     text-align: center; /* centraliza o texto */
     color: var(--cor-terciaria); /* cor do texto */
     padding: 2rem; /* espaçamento interno */
@@ -191,7 +193,7 @@ header .container{
     /* gap: 2rem; espaçamento entre os itens */
     padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
-    max-width: 1500px;
+    max-width: var(--max-width)px;
     margin: 0% auto; /* centraliza o container */
 }
   
@@ -299,7 +301,7 @@ header .container{
     display: flex;      
     justify-content: center;
     align-items: center;    
-    max-width: 1500px;
+    max-width: var(--max-width)px;
     margin: 0% auto;
   }
 
@@ -355,7 +357,7 @@ header .container{
   }
 
   .footer-container{
-    max-width: 1500px;    
+    max-width: var(--max-width)px;    
     width: 100%;
     height: auto; 
     display: flex;
@@ -382,7 +384,7 @@ header .container{
     gap: clamp(0.25rem, 1vw, 1rem);
     justify-content: space-between;
     align-items: flex-start; /* alinha os itens no topo */
-    width: clamp(.5%, 58vw, 58%);    
+    width: clamp(5%, 58vw, 60%); /* delimita o tamanho do menu: Instit. até FaleConosco */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
     padding-right: clamp(0.5rem, 1vw, 1rem); /* espaçamento interno do container */
 }
@@ -393,10 +395,11 @@ header .container{
     display: flex;
     flex-direction: column;  
     gap: clamp(0.5rem, 0.1vw, 2rem);     
-    font-size: var(--font-small);
+    font-size: var(--font-p+0);
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
+    /* border: 2px solid red; */
   }
 
 .sitemap-column p{    
@@ -412,7 +415,7 @@ header .container{
  .sitemap-lista a{
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-secundaria); /* cor do texto */
-    font-size: var(--font-small);/* clamp(0.75rem, 1.5vw, 1.75rem) */ /* entre 13px e 14px */
+    font-size: var(--font-p);/* clamp(0.75rem, 1.5vw, 1.75rem) */ /* entre 13px e 14px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */  
   }
@@ -434,10 +437,12 @@ header .container{
 
   .icon-item{
     flex: 1 1 calc(50% - 0.5rem); /* largura mínima do ícone */
-    min-width: 200px;
+    min-width: 100px;
     display: flex;
     align-items: center;
     gap: 0.5rem; /* espaçamento entre o ícone e o texto */
+    /* border: 2px solid red; borda transparente para manter o espaço */
+    
   }
 
   .icon-item img {
@@ -448,10 +453,10 @@ header .container{
 }
 
   .icon-item span{
-    font-size: var(--font-small); 
+    font-size: var(--font-p); 
     color: var(--cor-secundaria); 
     transition: color 0.3s ease; /* animação suave na mudança de cor */
-    white-space: wrap; /* evita quebrar o texto em duas linhas */
+    white-space: wrap;
     line-height: 1.2; /* espaçamento entre as linhas */
   }
 
@@ -476,9 +481,9 @@ header .container{
     gap: clamp(0.5rem, 0.1vw, 2rem);        
     padding: clamp(0.5rem, 0.75vw, 2rem);
     background-color: var(--cor-quintaria);
-    font-size: var(--font-small);
+    font-size: var(--font-p);
     font-weight: 400;
-    white-space: nowrap; /* evita quebrar o texto em duas linhas */ 
+    white-space: wrap; /* evita quebrar o texto em duas linhas */ 
     width: 100%;
     text-align: center;   
   }
@@ -486,6 +491,8 @@ header .container{
   .developer{
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-terciaria);
+    font-size: var(--font-h5);
+    font-weight: 700; /* peso da fonte */
   }
 
   .developer:hover{
@@ -553,11 +560,15 @@ header .container{
 
   .sitemap{
     flex-direction: column;             
-    width: 32.5%;
+    width: 33%;
   }
 
-  .sitemap-column {
-    flex: 1 1 calc(50% - 0.5rem); /* largura mínima do ícone */ 
+  .icon-item span{
+    white-space: wrap; /* quebra o texto em várias linhas se necessário */
+  }
+
+  /* .sitemap-column {
+    flex: 1 1 calc(50% - 0.5rem);  
     width: 100%;    
-  }   
+  }    */
 }
