@@ -371,7 +371,7 @@ header .container{
   .footer-infos {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.5rem, 1vw, 1rem);
+    gap: clamp(1.5rem, 1.5vw, 2rem);
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
@@ -437,7 +437,7 @@ header .container{
 
   .icon-item{
     flex: 1 1 calc(50% - 0.5rem); /* largura mínima do ícone */
-    min-width: 100px;
+    min-width: 102px;
     display: flex;
     align-items: center;
     gap: 0.5rem; /* espaçamento entre o ícone e o texto */
@@ -560,15 +560,20 @@ header .container{
 
   .sitemap{
     flex-direction: column;             
-    width: 33%;
+    width: 30%;
+    white-space: wrap; /* quebra o texto em várias linhas se necessário */
+  }
+
+  .sitemap-column{
+    white-space: wrap; /* quebra o texto em várias linhas se necessário */
   }
 
   .icon-item span{
-    white-space: wrap; /* quebra o texto em várias linhas se necessário */
+    white-space: normal; /* Permite a quebra de linha automática */
+    word-break: break-word; /* Ajuda a forçar quebra se necessário */
   }
 
   /* .sitemap-column {
     flex: 1 1 calc(50% - 0.5rem);  
     width: 100%;    
   }    */
-}
