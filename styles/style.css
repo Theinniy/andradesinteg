@@ -386,20 +386,20 @@ header .container{
     align-items: flex-start; /* alinha os itens no topo */
     width: clamp(5%, 58vw, 60%); /* delimita o tamanho do menu: Instit. até FaleConosco */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
-    padding-right: clamp(0.5rem, 1vw, 1rem); /* espaçamento interno do container */
-}
+    padding-right: clamp(0.5rem, 1vw, 1rem); /*espaçamento interno do container*/
+  }
 
 .sitemap-column{
     /* flex: 0.25 0.5 min(10px, 5%) ; /* flex-grow, flex-shrink, flex-basis */
-    flex-basis: clamp(100px, 5vw, 150px); /* largura mínima do container */
+    flex-basis: clamp(50px, 5vw, 150px); /* determina a largura do item e altura no mobile*/
     display: flex;
-    flex-direction: column;  
-    gap: clamp(0.5rem, 0.1vw, 2rem);     
+    flex-direction: column;
+    gap: clamp(0.25rem, 0.1vw, 1rem);     
     font-size: var(--font-p+0);
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
-    /* border: 2px solid red; */
+    border: 2px solid red;
   }
 
 .sitemap-column p{    
@@ -410,6 +410,8 @@ header .container{
   
   .sitemap-lista{
     list-style: none; /* remove bolinhas da lista */
+    /* gap: clamp(0.25rem, 0.5vw, 0.5rem); espaçamento entre os itens da lista */
+    margin-left: 0.5rem; /* espaçamento do lado esquerdo */    
   }  
 
  .sitemap-lista a{
@@ -425,8 +427,8 @@ header .container{
   }
 
   .sitemap-lista li {
-    margin-bottom: 0.5rem;
-}
+    margin-bottom: clamp(0 rem, 0.5vw, 0.5rem);
+  }
 
   .icons-small{
     flex: 1;
@@ -441,8 +443,7 @@ header .container{
     display: flex;
     align-items: center;
     gap: 0.5rem; /* espaçamento entre o ícone e o texto */
-    /* border: 2px solid red; borda transparente para manter o espaço */
-    
+    border: 2px solid red; /* borda transparente para manter o espaço */
   }
 
   .icon-item img {
@@ -450,7 +451,7 @@ header .container{
     height: 24px;
     object-fit: contain; /* ajuda o ícone a não "esmagar" */
     display: block; /* tira espaçamentos invisíveis */
-}
+  }
 
   .icon-item span{
     font-size: var(--font-p); 
@@ -522,7 +523,6 @@ header .container{
   .menu ul.aberto {
       display: flex;
   }
-
       
   .botao-orcamento-1{
       width: 50%; /* largura do conteúdo */        
@@ -534,23 +534,24 @@ header .container{
     background-repeat: no-repeat;  /* não repete a imagem de fundo  */
     background-position: center center; /* centraliza a imagem de fundo */
   }
+
   .cta-conteudo {
-      width: 100%; /* largura do conteúdo */
+    width: 100%; /* largura do conteúdo */
   }
     
   .sobre-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto;
-      gap: clamp(0.5rem, 1vw, 2.5rem);
-      padding: 1rem; /* espaçamento do container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: clamp(0.5rem, 1vw, 2.5rem);
+    padding: 1rem; /* espaçamento do container */
   }
   
   .servicos-container{
-      display: flex;
-      flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
+    display: flex;
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
   }
 
   .fundadores-container{
@@ -558,22 +559,23 @@ header .container{
     max-height: fit-content;
   }
 
-  .sitemap{
+  .sitemap{ 
     flex-direction: column;             
-    width: 30%;
-    white-space: wrap; /* quebra o texto em várias linhas se necessário */
+    width: 30%; /* largura do menu: Instit. até FaleConosco */
   }
-
-  .sitemap-column{
-    white-space: wrap; /* quebra o texto em várias linhas se necessário */
+  
+  .sitemap-lista li{
+    margin-top: 0.5rem; /* espaçamento do lado esquerdo */
+  }
+  
+  .sitemap-lista a{
+    white-space: normal;
+    word-wrap: break-word; /* quebra o texto longo em várias linhas */
   }
 
   .icon-item span{
     white-space: normal; /* Permite a quebra de linha automática */
     word-break: break-word; /* Ajuda a forçar quebra se necessário */
   }
+}
 
-  /* .sitemap-column {
-    flex: 1 1 calc(50% - 0.5rem);  
-    width: 100%;    
-  }    */
