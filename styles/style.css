@@ -322,7 +322,7 @@ header .container{
 
   .cards-fundadores{
     display: flex;
-    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    /* flex-wrap: wrap; permite que os itens se movam para a próxima linha em telas menores */
     justify-content: center; 
     gap: clamp(0.5rem, 1vw, 2rem);
     padding: clamp(0.75rem, 1vw, 2rem); 
@@ -399,7 +399,7 @@ header .container{
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
 .sitemap-column p{    
@@ -443,7 +443,7 @@ header .container{
     display: flex;
     align-items: center;
     gap: 0.5rem; /* espaçamento entre o ícone e o texto */
-    border: 2px solid red; /* borda transparente para manter o espaço */
+    /* border: 2px solid red; borda transparente para manter o espaço */
   }
 
   .icon-item img {
@@ -559,9 +559,21 @@ header .container{
     max-height: fit-content;
   }
 
+  .cards-fundadores{
+    display: flex;
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    flex-direction: column;
+    justify-content: center; 
+  }
+
   .sitemap{ 
     flex-direction: column;             
     width: 30%; /* largura do menu: Instit. até FaleConosco */
+  }
+
+  .sitemap-column{
+    /* flex-basis: 100%; /* largura do item e altura no mobile */
+    margin-bottom: 1rem; /* espaçamento entre as colunas */
   }
   
   .sitemap-lista li{
