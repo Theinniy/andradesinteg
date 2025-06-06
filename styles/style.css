@@ -75,25 +75,83 @@ header .container{
     height: auto;     
 }
 
-.menu ul{
-    list-style: none; /* remove bolinhas da lista */
-    margin: 0;
-    padding: 0;
-    display: flex; /* deixa os itens na horizontal */
-    gap: clamp(0.5rem, 3vw, 3.125rem); /* espaçamento entre os itens */
-    align-items: center; /* alinha no centro vertical */  
+.menu{
+  text-align: left;
 }
 
-.menu ul li a{
+.menu-principal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(0.5rem, 3vw, 3.125rem);
+  justify-content: flex-start;
+}
+
+.menu-principal > li > a {
     text-decoration: none; /* remove o sublinhado do link */
     color: var(--cor-secundaria); /* cor do texto */
     font-size: var(--font-h4);/* clamp(1rem, 1.5vw, 2rem) */ /* entre 14px e 24px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */
 }
-.menu ul li a:hover{
+
+.menu-principal > li > a:hover{
     color: var(--cor-quaternaria); /* cor do texto ao passar o mouse */
 }
+
+.submenu {
+  position: relative;
+  display: inline-flex; /* permite que o submenu seja posicionado relativo ao item pai */
+  cursor: pointer; /* muda o cursor para indicar que é clicável */  
+}
+
+.submenu-lista {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--cor-primaria);
+  flex-direction: column;
+  min-width: 200px;  
+  border-radius: 0 0 8px 8px;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);  
+} 
+
+.submenu:hover .submenu-lista {
+  display: flex;
+}
+
+.submenu-lista li {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* remove bolinhas da lista */
+}
+
+.submenu-lista li a {
+  display: block;
+  padding: 0 0.6rem;
+  font-size: var(--font-h5);
+  color: var(--cor-secundaria);
+  white-space: wrap; /* permite que o texto quebre em várias linhas */
+  text-align: left;
+  text-decoration: none; /* remove o sublinhado do link */  
+  line-height: 1.2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding-top: clamp(0.5rem, 1vw, 1rem);
+  padding-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+
+.submenu-lista li a:hover {
+  color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);/* rgba(255, 255, 255, 0.05);  */  
+}
+
+.submenu-lista li:last-child a {
+  border-radius: 0 0 8px 8px;
+}
+
 
 #menu-toggle {
     display: none;
@@ -505,7 +563,7 @@ header .container{
     
   #menu-toggle {
       display: block;
-  }
+  }  
 
   .menu ul {
     display: none;
@@ -515,14 +573,49 @@ header .container{
     padding: 0.5rem;
     position: absolute;
     top: 100%; /* aparece abaixo do header */
-    right: 2%; /* alinha à direita */
+    right: 0.5%; /* alinha à direita */
     min-width: 130px;
     z-index: 999;
   }
 
   .menu ul.aberto {
       display: flex;
+  } 
+
+  .submenu-lista {
+  position: relative;
+  display: none;
+  left: auto;
+  right: auto;
+  background: var(--cor-secundaria);
+  margin-top: 0.25rem;
+  color: var(--cor-primaria);
+  /* box-shadow: none;
+  border-radius: 0; */
+}
+
+.submenu:hover .submenu-lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu ul.aberto .submenu .submenu-lista {
+  background-color: var(--cor-secundaria); /* Cor para diferenciar */
+  /* border-left: 4px solid var(--cor-secundaria); /* Ou um detalhe visual */
+}
+
+.menu ul.aberto .submenu .submenu-lista a {
+    color: var(--cor-primaria); /* cor do texto */
   }
+
+
+
+/*----------------*/
       
   .botao-orcamento-1{
       width: 50%; /* largura do conteúdo */        
