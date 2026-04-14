@@ -277,20 +277,19 @@ header .container{
     display: flex;
     justify-content: center;
     align-items: center;    
-    /* gap: 2rem; espaçamento entre os itens */
-    padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */
+    padding: clamp(0.5rem, 1vw, 1.5rem); /*espaçamento do container */
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
     max-width: var(--max-width)px;
     margin: 0% auto; /* centraliza o container */
 }
   
-  .sobre-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-    gap: clamp(0.5rem, 2vw, 2.5rem);    
+.sobre-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: clamp(0.5rem, 1vw, 1.5rem);    
 }
   
   .sobre-imagem{
@@ -350,55 +349,78 @@ header .container{
   }
 
   #servicos{
-    padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */    
+    padding: clamp(0.5rem, 1vw, 1.5rem); /*espaçamento do container */    
   }
 
   .servicos-container{
     display: flex;
-    flex-wrap: nowrap; /* permite que os itens se movam para a próxima linha em telas menores */
-    justify-content: center; 
-    gap: clamp(0.5rem, 1vw, 2rem);
-    padding: clamp(0.75rem, 1vw, 2rem); 
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 auto;
+    gap: clamp(0.5rem, 1vw, 1.5rem);   
   }
 
   .servicos-tituloh1{
-    text-align: center;
     color: var(--cor-quaternaria);
-    font-size: var(--font-h1);
-    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /*Sombra bem suave e levemente para baixo */
+    font-weight: 700; /* peso da fonte */
+    border-left: 5px solid var(--cor-quaternaria); /* Barrinha dourada ao lado */
+    padding-left: 15px; /* Afasta o texto da barra */
+    line-height: 1;
   }
 
   .servicos-subtitulo{
-    text-align: center;
+    margin-top: clamp(0.5rem, 1vw, 1.5rem); /* espaçamento do título para o subtítulo */
     color: var(--cor-quintaria);
-    font-size: var(--font-h5);
+    font-size: var(--font-p);
     font-weight: 400;
   }
 
-  .servicos-card{
+  .cards-servicos-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Caso a tela seja pequena, eles quebram linha */
+    justify-content: center; /* CENTRALIZA OS CARDS NA TELA */
+    gap: clamp(0.25rem, 0.75vw, 1rem); /* espaçamento entre os cards */
     width: 100%;
-    max-width: 325px; /* largura máxima do card */
-    background-color: transparent;
-    overflow: hidden; /* esconde o que ultrapassa o container */
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* sombra puxando pra baixo e direita */    
+    margin-top: clamp(0.5rem, 1vw, 1.5rem); /*espaçamento do subtítulo para os cards */
+  }
+
+  .servicos-card{     
+    background-color: #ffffff;
+    border-radius: 12px; /* Arredondamento similar às fotos do Sobre */
+    padding: clamp(0.5rem, 1vw, 1.5rem); /* espaçamento interno adaptável */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra muito suave */
+    transition: all 0.3s ease;
+    border: 1px solid #f1f1f1; /* Uma borda fininha para dar acabamento */
+    overflow: hidden; /* Garante que a imagem respeite o arredondamento do card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
   }
 
   .servicos-card img{
     width: 100%; /* largura total do container */
-    height: 320px; /* altura automática para manter a proporção */
-    display: block; /* remove o espaço em branco abaixo da imagem */
+    height: 250px; /* altura automática para manter a proporção */
+    object-fit: cover; /* cobre o espaço disponível */
+    display: block; /* Corta a imagem sem distorcer */
+    
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   .servicos-conteudo{
     background-color: var(--cor-primaria);
     padding: 0.75rem;
     text-align: center;
-    color: var(--cor-quintaria);    
+    color: var(--cor-quintaria); 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;   
   }
 
-    .servicos-titulo{
+  .servicos-titulo{
         font-size: var(--font-h5); 
         font-weight: 700; /* peso da fonte */
     }
@@ -409,65 +431,6 @@ header .container{
     padding: clamp(0.5rem, 1vw, 1.5rem);      
   }
   
-  .fundadores {
-    display: flex;      
-    justify-content: center;
-    align-items: center;    
-    max-width: var(--max-width)px;
-    margin: 0% auto;
-  }
-
-  .fundadores-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto;
-    gap: clamp(0.5rem, 1vw, 2.5rem);        
-    padding: clamp(1rem, 1.5vw, 2rem);
-  }
-
-  .fundadores-titulo{
-    writing-mode: vertical-rl; /* Escreve verticalmente da direita pra esquerda */
-    transform: rotate(180deg); /* Rotaciona 180 graus */
-  }
-
-  .cards-fundadores{
-    display: flex;
-    /* flex-wrap: wrap; permite que os itens se movam para a próxima linha em telas menores */
-    justify-content: center; 
-    gap: clamp(0.5rem, 1vw, 2rem);
-    padding: clamp(0.75rem, 1vw, 2rem); 
-  }
-
-  .card-fundador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 300px; /* largura máxima do card */
-  }
-
-  .card-fundador img {
-    width: 100%; /* largura total do container */
-    height: auto; /* altura automática para manter a proporção */
-    object-fit: cover;
-  }
-
-  .card-fundador h5{
-    font-size: var(--font-h5); /* clamp(1rem, 1.5vw, 2rem) */ /* tamanho da fonte responsivo */
-    font-weight: 700; /* peso da fonte */
-    color: var(--cor-quaternaria);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
-  }
-
-  .card-fundador p{
-    font-size: var(--font-p); /* clamp(0.75rem, 1.35vw, 1.75rem); */ /* tamanho da fonte responsivo */
-    font-weight: 400; /* peso da fonte */
-    padding: clamp(0.5rem, 1vw, 1.5rem);    
-  }
-
   .footer-container{
     max-width: var(--max-width)px;    
     width: 100%;
@@ -483,7 +446,7 @@ header .container{
   .footer-infos {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os itens MENU & endereco */
+    gap: clamp(0.75rem, 1vw, 1rem); /* espaçamento entre os itens MENU & endereco */
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
@@ -493,26 +456,28 @@ header .container{
     /* flex: 2; */
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0,25rem, 0,75vw, 1rem);
-    justify-content: space-between;
+    justify-content: flex-start; /*space-between: alinha os itens à esquerda e distribui o espaço restante */
+    gap: clamp(0.5rem, 1vw, 2rem);
+    
     align-items: flex-start; /* alinha os itens no topo */
-    width: clamp(5%, 58vw, 60%); /* delimita o tamanho do menu: Instit. até FaleConosco */
+    width: clamp(5%, 50vw, 60%); /* delimita o tamanho da caixa inteira do menu: Instit. até FaleConosco, considere que cada menu é uma caixa individual e juntos formam a caixa total que é essa sendo calculada aqui */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
-    padding-right: clamp(0.5rem, 1vw, 1rem); /*espaçamento interno do container*/
-     border: 2px solid olivedrab;
+    padding-right: clamp(1rem, 1.5vw, 1.75rem); /*espaçamento interno do container*/
+     /* border: 2px solid olivedrab; */
   }
 
 .sitemap-column{
     /* flex: 0.25 0.5 min(10px, 5%) ; /* flex-grow, flex-shrink, flex-basis */
-    flex-basis: clamp(50px, 5vw, 150px); /* determina a largura do item e altura no mobile*/
+    flex-basis: clamp(100px, 5vw, 250px); /* determina a largura do item e altura no mobile*/
     display: flex;
     flex-direction: column;
-    gap: clamp(0.25rem, 0.1vw, 1rem);     
-    font-size: var(--font-p+0);
+    gap: clamp(0.5rem, 1vw, 2rem); /* espaçamento entre os itens da coluna */
+    
+    font-size: var(--font-p);
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
-    border: 2px solid red;
+    /*border: 2px solid red;*/
   }
 
 .sitemap-column p{    
@@ -544,20 +509,23 @@ header .container{
   }
 
   .icons-small{
-    flex: 1;
+    flex: 1; /* flex-grow para ocupar o espaço restante */
     display: flex;    
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
-    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os ícones */
-    border: 2px solid olivedrab; 
+    gap: clamp(0.5rem, 1vw, 1.5rem); /* espaçamento entre os ícones */
+    
+    width: clamp(5%, 50vw, 60%); /* delimita o tamanho da caixa inteira dos ícones, considere que cada ícone é uma caixa individual e juntos formam a caixa total que é essa sendo calculada aqui */
+     align-self: flex-start; /* impede que a altura dela afete os itens do menu ao lado */
+     /*border: 2px solid olivedrab; */
   }
 
   .icon-item{
     flex: 1 1 calc(50% - 0.5rem); /* largura mínima do ícone */
-    min-width: 102px;
+    min-width: 120px;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* espaçamento entre o ícone e o texto */
-    /* border: 2px solid red; borda transparente para manter o espaço */
+    gap: clamp(0.25rem, 0.5vw, 0.75rem); /* espaçamento entre o ícone e o texto */
+    /*border: 2px solid red; borda transparente para manter o espaço */
   }
 
   .icon-item img {
@@ -722,12 +690,12 @@ header .container{
 
   .sitemap{ 
     flex-direction: column;             
-    width: 30%; /* largura do menu: Instit. até FaleConosco */
+    width: 32%; /* largura do menu: Instit. até FaleConosco */
   }
 
   .sitemap-column{
-    /* flex-basis: 100%; /* largura do item e altura no mobile */
-    margin-bottom: 0.5rem; /* espaçamento entre as colunas */
+    flex-basis: 100%; /* largura do item e altura no mobile */
+    margin-bottom: 0.25rem; /* espaçamento entre as colunas */
   }
   
   .sitemap-lista li{
