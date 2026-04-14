@@ -499,7 +499,7 @@ header .container{
     width: clamp(5%, 58vw, 60%); /* delimita o tamanho do menu: Instit. até FaleConosco */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
     padding-right: clamp(0.5rem, 1vw, 1rem); /*espaçamento interno do container*/
-     border: 2px solid olivedrab;
+    /*border: 2px solid olivedrab;*/
   }
 
 .sitemap-column{
@@ -512,7 +512,7 @@ header .container{
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
-    border: 2px solid red;
+    /*border: 2px solid red;*/
   }
 
 .sitemap-column p{    
@@ -548,7 +548,7 @@ header .container{
     display: flex;    
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
     gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os ícones */
-    border: 2px solid olivedrab; 
+    /*border: 2px solid olivedrab; */
   }
 
   .icon-item{
