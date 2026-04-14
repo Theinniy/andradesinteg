@@ -673,7 +673,8 @@ header .container{
   
   .servicos-container{
     display: flex;
-    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */ 
+    gap: 10px; /* Diminui o espaço entre eles */    
   }
 
   /* .fundadores-container{
