@@ -462,8 +462,13 @@ header .container{
     align-items: flex-start; /* alinha os itens no topo */
     width: clamp(5%, 50vw, 60%); /* delimita o tamanho da caixa inteira do menu: Instit. até FaleConosco, considere que cada menu é uma caixa individual e juntos formam a caixa total que é essa sendo calculada aqui */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
+<<<<<<< HEAD
     padding-right: clamp(1rem, 1.5vw, 1.75rem); /*espaçamento interno do container*/
      /* border: 2px solid olivedrab; */
+=======
+    padding-right: clamp(0.5rem, 1vw, 1rem); /*espaçamento interno do container*/
+    /*border: 2px solid olivedrab;*/
+>>>>>>> d514583f5974db56717f34b2c9e8b1226ceecd7c
   }
 
 .sitemap-column{
@@ -512,11 +517,16 @@ header .container{
     flex: 1; /* flex-grow para ocupar o espaço restante */
     display: flex;    
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+<<<<<<< HEAD
     gap: clamp(0.5rem, 1vw, 1.5rem); /* espaçamento entre os ícones */
     
     width: clamp(5%, 50vw, 60%); /* delimita o tamanho da caixa inteira dos ícones, considere que cada ícone é uma caixa individual e juntos formam a caixa total que é essa sendo calculada aqui */
      align-self: flex-start; /* impede que a altura dela afete os itens do menu ao lado */
      /*border: 2px solid olivedrab; */
+=======
+    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os ícones */
+    /*border: 2px solid olivedrab; */
+>>>>>>> d514583f5974db56717f34b2c9e8b1226ceecd7c
   }
 
   .icon-item{
