@@ -603,7 +603,7 @@ header .container{
 
     border: 1px solid #f1f1f1; /* Uma borda fininha para dar acabamento */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra muito suave */
-    border-radius: 8px; /* DICA: Adicione um arredondamento para combinar com seus cards */
+    border-radius: 8px; /* DICA: Adicione um arredondamento para combinar com seus cards */ 
   }
 
   .menu ul.aberto {
@@ -632,14 +632,14 @@ header .container{
   align-items: flex-start;
 }
 
-.menu ul.aberto .submenu .submenu-lista {
+/*.menu ul.aberto .submenu .submenu-lista {
   background-color: var(--cor-secundaria); /* Cor para diferenciar */
-  /* border-left: 4px solid var(--cor-secundaria); /* Ou um detalhe visual */
+  /* border-left: 4px solid var(--cor-secundaria); /* Ou um detalhe visual 
 }
 
 .menu ul.aberto .submenu .submenu-lista a {
-    color: var(--cor-primaria); /* cor do texto */
-  }
+    color: var(--cor-primaria); /* cor do texto 
+  }*/
 
 
 
