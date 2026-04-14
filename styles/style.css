@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 :root{
-    --cor-primaria: #181C3E;
-    --cor-secundaria: #B8BDD8;
+    --cor-primaria: #F8F9FA;
+    --cor-secundaria: #181C3E;
     --cor-terciaria: #EEF0F6;
     --cor-quaternaria: #C9A227;
     --cor-quintaria: #3E3E3E;
@@ -48,7 +48,7 @@ main{
 header{
     display: flex; /* exibe os itens na horizontal */
     justify-content: space-between; /* espaçamento entre os itens */
-    background-color:rgba(19, 21, 54, 0.9);/* #131536 com 90% opacidade */
+    background-color:rgba(248, 249, 250, 0.9);/* #F8F9FA com 90% opacidade */
     backdrop-filter: blur(10px);/* desfoca o fundo do header */
     -webkit-backdrop-filter: blur(10px);/* desfoca o fundo do header */
     z-index: 1000;/* garante que o header fique acima de outros elementos */
@@ -98,6 +98,7 @@ header .container{
 
 .menu-principal > li > a:hover{
     color: var(--cor-quaternaria); /* cor do texto ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
 }
 
 .submenu {
@@ -164,7 +165,7 @@ header .container{
 
 .botao-orcamento{
     background-color: var(--cor-quaternaria);
-    color: var(--cor-primaria);
+    color: var(--cor-secundaria);
     padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2.5rem); /* padding vertical e horizontal adaptável */
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
@@ -176,10 +177,18 @@ header .container{
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
 }
 
+
+.botao-orcamento:hover{
+    color: var(--cor-primaria);
+    background-color: var(--cor-secundaria); /*cor do botão ao passar o mouse*/
+    /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); sombra mais intensa ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
 .cta{
     position: relative; /* posição relativa para o efeito de sombra */
     width: 100%; /* largura total do container */
-    height: 100vh; /* altura total do container */
+    height: 100vh; /* altura total da viewport */
     overflow: hidden; /* esconde o que ultrapassa o container */   
 }
 
@@ -191,9 +200,16 @@ header .container{
     transform: translateX(-50%); /* centraliza o container */   
     width: 100%; /* largura total do container */
     height: 100%;
-    background-image: url('../img/cta-Bg-mobile1.jpg');/* imagem de fundo */
+    
+    background-image: linear-gradient(
+      to bottom,
+      rgba(248, 249, 250, 1) 0%,    /* Topo sólido */
+      rgba(248, 249, 250, 0.5) 50%,   /* Abre a imagem rápido */
+      rgba(248, 249, 250, 0.5) 50%,   /* Começa a fechar a imagem mais cedo (aos 60%) */
+      rgb(248, 249, 250, 1) 75%   /* Aos 95% a imagem já sumiu totalmente */
+    ), url('../img/Bg.jpg'); /* imagem de fundo */
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     z-index: 1;
 }
@@ -202,12 +218,12 @@ header .container{
 .cta-conteudo {
     position: absolute; /* posição relativa para centralizar sobre a imagem */
     z-index: 2; /* garante que o conteúdo fique acima da imagem */
-    top: 50%; /* 50% do topo do container */
+    top: 60%; /* 50% do topo do container */
     left: 50%; /* 50% da esquerda do container */
     transform: translate(-50%, -50%); /* centraliza o conteúdo */
     width: clamp(65%,65vw,75%); /* largura do conteúdo */
     text-align: center; /* centraliza o texto */
-    color: var(--cor-terciaria); /* cor do texto */
+    color: var(--cor-secundaria); /* cor do texto */
     padding: 2rem; /* espaçamento interno */
     gap: 1rem; /* espaçamento entre os itens */
     display: flex; /* exibe os itens na vertical */
@@ -218,13 +234,19 @@ header .container{
 .cta-titulo{
     font-size: var(--font-h1);/* clamp(1rem, 2vw, 3.3440rem) */ /* tamanho da fonte responsivo */
     font-weight: 700; /* peso da fonte */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
+    /* text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); sombra do texto */
+    text-shadow: 
+      1px 1px 0 #fff,  /* Halo para a direita e baixo */
+      -1px -1px 0 #fff, /* Halo para a esquerda e cima */
+      1px -1px 0 #fff, /* Halo para a direita e cima */
+      -1px 1px 0 #fff,  /* Halo para a esquerda e baixo */
+      0px 0px 8px rgba(255,255,255, 0.8); /* Um brilho suave branco para garantir */
 }
 
 .cta-subtitulo{
     font-size: var(--font-h3); /* clamp(1rem, 1.5vw, 2rem) */ /* tamanho da fonte responsivo */
     font-weight: 400; /* peso da fonte */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 5.5); /* sombra do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15); /* sombra do texto */
 }
 
 .botao-orcamento-1{
@@ -235,13 +257,20 @@ header .container{
     margin: 0 auto; /* centraliza o botão */
     padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2.5rem); /* padding vertical e horizontal adaptável */
     background-color: var(--cor-quaternaria);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra do botão */
     color: var(--cor-primaria);
     border-radius: clamp(6px, 1vw, 12px); /* canto arredondado adaptável */
     text-decoration: none; /* remove o sublinhado do link */
     font-size: var(--font-h3);/* clamp(1rem, 2vw, 2rem) */ /* fonte responsiva */
     font-weight: 700; /* peso da fonte */
-    transition: background-color 0.3s ease; /* animação suave na mudança de cor */
+    transition: background-color all 0.3s ease; /* animação suave na mudança de cor */
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
+}
+
+.botao-orcamento-1:hover{
+    background-color: var(--cor-secundaria); /*cor do botão ao passar o mouse*/
+    /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); sombra mais intensa ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
 }
 
 #sobre {
@@ -271,6 +300,29 @@ header .container{
     flex: 0 1 55%; /* base proporcional à largura original */
     object-fit: cover; /* cobre o espaço disponível */
   }
+
+  .grid-sobre {
+    display: grid;
+    /* Cria duas colunas de tamanhos iguais */
+    grid-template-columns: repeat(2, 1fr); 
+    /* Espaço entre as fotos */
+    gap: 20px; 
+    max-width: 700px; /* Ajuste conforme a largura do seu layout */
+    margin-bottom: 30px;
+}
+
+.grid-sobre img {
+    width: 300px;
+    height: 275px;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem esticar */
+    border-radius: 8px; /* Cantos levemente arredondados para um toque moderno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Uma sombra leve para dar profundidade */
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.grid-sobre img:hover {
+    transform: scale(1.02); /* A foto cresce levemente ao passar o mouse */
+}
   
   .sobre-texto-container {
     display: flex;
@@ -284,18 +336,20 @@ header .container{
    
   .sobre-titulo {
     color: var(--cor-quaternaria);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 10.5); /* sombra do texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /*Sombra bem suave e levemente para baixo */
     font-weight: 700; /* peso da fonte */
+    border-left: 5px solid var(--cor-quaternaria); /* Barrinha dourada ao lado */
+    padding-left: 15px; /* Afasta o texto da barra */
+    line-height: 1;
   }
 
   .sobre-texto {
     font-size: var(--font-p);/* clamp(0.75rem, 1.35vw, 1.75rem); */ /* tamanho da fonte responsivo */
     font-weight: 400; /* peso da fonte */
-    color: var(--cor-terciaria);
+    color: var(--cor-quintaria);
   }
 
   #servicos{
-    background-color: var(--cor-terciaria);
     padding: clamp(1rem, 1.5vw, 2rem); /*espaçamento do container */    
   }
 
@@ -309,7 +363,7 @@ header .container{
 
   .servicos-tituloh1{
     text-align: center;
-    color: var(--cor-primaria);
+    color: var(--cor-quaternaria);
     font-size: var(--font-h1);
     font-weight: 700;
   }
@@ -333,12 +387,12 @@ header .container{
 
   .servicos-card img{
     width: 100%; /* largura total do container */
-    height: auto; /* altura automática para manter a proporção */
+    height: 320px; /* altura automática para manter a proporção */
     display: block; /* remove o espaço em branco abaixo da imagem */
   }
 
   .servicos-conteudo{
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-primaria);
     padding: 0.75rem;
     text-align: center;
     color: var(--cor-quintaria);    
@@ -423,13 +477,13 @@ header .container{
     align-items: flex-start;    
     margin: 0 auto;            
     padding: clamp(1.5rem, 1.5vw, 1.5rem);
-    background-color: #131536;
+    background-color: var(--cor-secundaria);
   }
   
   .footer-infos {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(1.5rem, 1.5vw, 2rem);
+    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os itens MENU & endereco */
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
@@ -439,12 +493,13 @@ header .container{
     /* flex: 2; */
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.25rem, 1vw, 1rem);
+    gap: clamp(0,25rem, 0,75vw, 1rem);
     justify-content: space-between;
     align-items: flex-start; /* alinha os itens no topo */
     width: clamp(5%, 58vw, 60%); /* delimita o tamanho do menu: Instit. até FaleConosco */
     align-self: flex-start; /* impede que a altura dela afete os ícones ao lado */
     padding-right: clamp(0.5rem, 1vw, 1rem); /*espaçamento interno do container*/
+     border: 2px solid olivedrab;
   }
 
 .sitemap-column{
@@ -457,7 +512,7 @@ header .container{
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap; /* evita quebrar o texto em duas linhas */
-    /* border: 2px solid red; */
+    border: 2px solid red;
   }
 
 .sitemap-column p{    
@@ -474,7 +529,7 @@ header .container{
 
  .sitemap-lista a{
     text-decoration: none; /* remove o sublinhado do link */
-    color: var(--cor-secundaria); /* cor do texto */
+    color: var(--cor-primaria); /* cor do texto */
     font-size: var(--font-p);/* clamp(0.75rem, 1.5vw, 1.75rem) */ /* entre 13px e 14px */
     font-weight: 400; /* peso da fonte */
     transition: color 0.3s ease; /* animação suave na mudança de cor */  
@@ -492,7 +547,8 @@ header .container{
     flex: 1;
     display: flex;    
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
-    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os ícones */ 
+    gap: clamp(0.5rem, 0.5vw, 1rem); /* espaçamento entre os ícones */
+    border: 2px solid olivedrab; 
   }
 
   .icon-item{
@@ -513,7 +569,7 @@ header .container{
 
   .icon-item span{
     font-size: var(--font-p); 
-    color: var(--cor-secundaria); 
+    color: var(--cor-primaria); 
     transition: color 0.3s ease; /* animação suave na mudança de cor */
     white-space: wrap;
     line-height: 1.2; /* espaçamento entre as linhas */
@@ -537,11 +593,11 @@ header .container{
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    gap: clamp(0.5rem, 0.1vw, 2rem);        
-    padding: clamp(0.5rem, 0.75vw, 2rem);
-    background-color: var(--cor-quintaria);
-    font-size: var(--font-p);
-    font-weight: 400;
+    /* gap: clamp(0.5rem, 0.5vw, 1rem);         */
+    padding: clamp(0.5rem, 0.5vw, 1rem);
+    background-color: var(--cor-primaria);
+    font-size: var(--font-small);
+    font-weight: 100;
     white-space: wrap; /* evita quebrar o texto em duas linhas */ 
     width: 100%;
     text-align: center;   
@@ -549,14 +605,14 @@ header .container{
 
   .developer{
     text-decoration: none; /* remove o sublinhado do link */
-    color: var(--cor-terciaria);
-    font-size: var(--font-h5);
-    font-weight: 700; /* peso da fonte */
+    color: var(--cor-secundaria);
+    font-size: var(--font-small);
+    font-weight: 600; /* peso da fonte */
   }
 
   .developer:hover{
     color: var(--cor-quaternaria); /* cor do texto ao passar o mouse */
-    font-weight: 700;
+    font-weight: 600;
   }
  
 @media screen and (max-width: 768px) {
@@ -641,23 +697,28 @@ header .container{
     gap: clamp(0.5rem, 1vw, 2.5rem);
     padding: 1rem; /* espaçamento do container */
   }
+
+  .grid-sobre {
+        grid-template-columns: 1fr; /* Uma foto embaixo da outra no celular */
+        justify-items: center;
+    }
   
   .servicos-container{
     display: flex;
     flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */     
   }
 
-  .fundadores-container{
+  /* .fundadores-container{
     align-items: flex-start;
     max-height: fit-content;
-  }
+  } */
 
-  .cards-fundadores{
+  /* .cards-fundadores{
     display: flex;
-    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores */
+    flex-wrap: wrap; /* permite que os itens se movam para a próxima linha em telas menores
     flex-direction: column;
     justify-content: center; 
-  }
+  } */
 
   .sitemap{ 
     flex-direction: column;             
@@ -666,7 +727,7 @@ header .container{
 
   .sitemap-column{
     /* flex-basis: 100%; /* largura do item e altura no mobile */
-    margin-bottom: 1rem; /* espaçamento entre as colunas */
+    margin-bottom: 0.5rem; /* espaçamento entre as colunas */
   }
   
   .sitemap-lista li{
@@ -678,9 +739,16 @@ header .container{
     word-wrap: break-word; /* quebra o texto longo em várias linhas */
   }
 
+  .icon-item{
+    flex: 1 1 100%; /* largura total do item */
+    min-width: 0; /* permite que o item encolha além do conteúdo */
+    justify-content: flex-start; /* alinha os itens à esquerda */
+  }
+
   .icon-item span{
-    white-space: normal; /* Permite a quebra de linha automática */
+    /* white-space: normal; Permite a quebra de linha automática */
     word-break: break-word; /* Ajuda a forçar quebra se necessário */
+    line-height: 1.5; /* aumenta o espaçamento entre as linhas para melhor legibilidade */
   }
 }
 
